@@ -17,7 +17,7 @@ pipeline{
         stage("build code"){
             steps{
                 println "mvn clean package"
-                sh "go build hello-world.go"
+                sh "go run main.go"
                 sh "ls -l target/"
             }
         }
