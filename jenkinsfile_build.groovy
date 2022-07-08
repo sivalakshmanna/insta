@@ -9,8 +9,7 @@ pipeline{
                 println "clone our code to our repository"
                 sh "ls -l"
                 sh "ls -lart ./*"
-                git branch: "${BRANCH_NAME}",
-                url: 'https://github.com/KuruvaSomaSekhar/boxfuse-sample-java-war-hello.git'
+                
                 
 
             }
@@ -18,7 +17,7 @@ pipeline{
         stage("build code"){
             steps{
                 println "mvn clean package"
-                sh "mvn clean package"
+                sh "go build"
                 sh "ls -l target/"
             }
         }
